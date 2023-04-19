@@ -29,7 +29,7 @@ const array = [
 ]
 ```
 - Now paste objects where you want them in the array without consideration for the value of the `DisplayOrder` fields
-- Enter your edited array into the variable in `index.js`
+- Enter your edited array into the variable in `inputHere.js`
 - Type `npm run start` in the console
 - The json result will be logged to the console for copying
 
