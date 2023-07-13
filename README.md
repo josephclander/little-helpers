@@ -10,7 +10,12 @@ To keep this maintainable add a folder to the root directory and add your own `p
 
 `node_modules` are in the root level `.gitignore`.
 
-## Contents
+### Contents
 
-[DisplayOrder](https://github.com/josephclander/little-helpers/tree/main/DisplayOrder)
-[AddFields](https://github.com/josephclander/little-helpers/tree/main/AddFields)
+| Function                                                                                      | Description                                                   |
+|-----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| [DisplayOrder](https://github.com/josephclander/little-helpers/tree/main/DisplayOrder)        | Change all values to chronological DisplayOrder               |
+| [AddFields](https://github.com/josephclander/little-helpers/tree/main/AddFields)              | Add fields if not present in an object with value 'Undefined' |
+
+
+
