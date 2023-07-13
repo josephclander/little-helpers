@@ -1,55 +1,64 @@
 # DisplayOrder Script
 
-A helper script that will set all object `DisplayOrder` fields in a given array into correct numerical order.
+A helper script that will add fields to an object in an array if it isn't present with the value 'Undefined'.
+This will allow you to more easily locate and change values in an array of objects.
 
 Example
 
+As the second field in this array didn't have an assigned DataType, there is no field. This can make checking for values of a field difficult as well as having nothing to 'find' when using find and replace in your code editor.
+
 ```js
 const array = [
-    {field1: "hello", DisplayOrder: 2},
-    {field1: "hi", DisplayOrder: 1},
-    {field1: "howdy", DisplayOrder: 3},
-]
+  {
+    Values: [],
+    ConnectorField: "entity.total_price",
+    SystemField: "TotalPrice",
+    DataType: "Float",
+    DisplayName: "Total Price",
+    DisplayOrder: 1,
+  },
+  {
+    Values: [],
+    ConnectorField: "entity.discount_type",
+    SystemField: "DiscountType",
+    DisplayName: "Discount Type",
+    DisplayOrder: 2,
+  },
+];
 ```
 
-converted to 
+converted to
 
 ```js
 const array = [
-    {field1: "hello", DisplayOrder: 1},
-    {field1: "hi", DisplayOrder: 2},
-    {field1: "howdy", DisplayOrder: 3},
-]
+  {
+    Values: [],
+    ConnectorField: "entity.total_price",
+    SystemField: "TotalPrice",
+    DataType: "Float",
+    DisplayName: "Total Price",
+    DisplayOrder: 1,
+  },
+  {
+    Values: [],
+    ConnectorField: "entity.discount_type",
+    SystemField: "DiscountType",
+    DataType: "Undefined",
+    DisplayName: "Discount Type",
+    DisplayOrder: 2,
+  },
+];
 ```
 
 ## How to use
 
 - Clone the full repo
-- Navigate to the `DisplayOrder` folder
+- Navigate to the `AddFields` folder
 
 ### Standard Use
 
-- Paste objects where you want them in the array without consideration for the value of the `DisplayOrder` fields
-- Enter your edited array into the variable in `inputHere.js`
+- Enter your array into the variable in `inputHere.js`
+- Add all strings that you want added to your `fields` entry
 - Type `npm run start` in the console
 - The json result will be logged to the console for copying
-
-### How it works
-
-Once the objects are in the order you want, the function will run through the objects and rewrite each DisplayOrder field with the current index.
-
-**Note:** This function will **NOT** affect an array of objects with `DisplayOrder` a second level down.
-
-### Testing
-
-It can be difficult to check large data files match precisely so testing capabilities have been added. A small sample of tests have been initially included but it would be ideal if further examples were added for robustness.
-
-### Adding more example tests
-
-- Install the node modules with `npm i`
-- Add a test array and result in `testData.js` in the same format as the other tests
-- Remember to add the variables to the `module.exports`
-- Tests are written in `DisplayOrder.test.js`
-    - Follow the standard `jest` format for writing tests
-    - You can copy the format of the current tests
-- Type `npm run test` in the console to confirm the function works for this example
+- Note this is non-destructive, if you make an error in your field names, change your entries, go again

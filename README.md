@@ -13,3 +13,4 @@ To keep this maintainable add a folder to the root directory and add your own `p
 ## Contents
 
 [DisplayOrder](https://github.com/josephclander/little-helpers/tree/main/DisplayOrder)
+[AddFields](https://github.com/josephclander/little-helpers/tree/main/AddFields)
