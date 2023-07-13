@@ -1,4 +1,4 @@
-# ObjectDiffer Script
+# DifferentObjKeys Script
 
 This script will return the keys and values of the second object that don't match the first.
 
@@ -13,13 +13,13 @@ const yourInput = {
 returns
 
 ```js
-{ first: 2 }
+['third']
 ```
 
 ## How to use
 
 - Clone the full repo
-- Navigate to the `ObjectDiffer` folder
+- Navigate to the `DifferentObjKeys` folder
 
 ### Standard Use
 
