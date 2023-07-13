@@ -1502,7 +1502,7 @@ const yourInput = {
       DisplayOrder: 201,
     },
   ],
-  fields: ["DataType", "Description"],
+  fields: ["DataType"],
 };
 
 module.exports = yourInput;

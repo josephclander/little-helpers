@@ -16,6 +16,7 @@ To keep this maintainable add a folder to the root directory and add your own `p
 |-----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | [DisplayOrder](https://github.com/josephclander/little-helpers/tree/main/DisplayOrder)        | Change all values to chronological DisplayOrder               |
 | [AddFields](https://github.com/josephclander/little-helpers/tree/main/AddFields)              | Add fields if not present in an object with value 'Undefined' |
+| [ObjectDiffer](https://github.com/josephclander/little-helpers/tree/main/ObjectDiffer)        | return key/value differences in new object                    |
 
 
 
