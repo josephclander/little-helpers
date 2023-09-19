@@ -3,16 +3,28 @@ const { JSDOM } = jsdom;
 
 JSDOM.fromFile("inputData.html").then((dom) => {
   const fields = [];
+  // elements that start with property-name
   const list = dom.window.document.querySelectorAll(
-    "[data-test='property-type']"
+    "[data-test^='property-name']"
+    // "[data-test='property-name-product_handle']"
   );
-  list.forEach((el) => {
+  // console.log(list[0].textContent); // product_handle
+  for (let i = 0; i < list.length; i++) {
     const object = {};
-    object["ConnectorField"] = el.previousSibling.innerText;
-    object["DataType"] = el.textContent;
-    // object["Description"] =
-    //   el.parentElement.parentElement.nextSibling.firstChild.textContent;
+    object["ConnectorField"] = list[i].textContent.trim();
+    object["DataType"] = list[i].parentElement.lastElementChild.textContent.trim();
     fields.push(object);
-  });
-  console.log(JSON.stringify(fields, ' ', 4));
+  }
+
+  // object["ConnectorField"] = el.innerText;
+  // object["Description"] =
+  //   el.parentElement.parentElement.nextSibling.firstChild.textContent;
+  console.log(JSON.stringify(fields, " ", 4));
 });
+
+// finding the name
+// const list = dom.window.document.querySelector(
+//   // "[data-test^='property-name']"
+//   "[data-test='property-name-product_handle']"
+// ).textContent.trim();
+// console.log(JSON.stringify(list));
