@@ -1,3 +1,4 @@
+const fs = require('fs')
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
@@ -25,6 +26,7 @@ JSDOM.fromFile("inputData.html").then((dom) => {
     fields.push(object);
   }
 
+  fs.writeFileSync('parsed.json', JSON.stringify(fields));
   console.log(JSON.stringify(fields, " ", 4));
 });
 
