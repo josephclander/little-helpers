@@ -9,10 +9,19 @@ JSDOM.fromFile("inputData.html").then((dom) => {
     // "[data-test='property-name-product_handle']"
   );
   // console.log(list[0].textContent); // product_handle
+  // console.log(list[0].textContent); // product_handle
   for (let i = 0; i < list.length; i++) {
     const object = {};
+    console.log(list[i].parentElement.parentElement.nextSibling.textContent);
+    object["Values"] = [];
     object["ConnectorField"] = list[i].textContent.trim();
-    object["DataType"] = list[i].parentElement.lastElementChild.textContent.trim();
+    object["DataType"] =
+      list[i].parentElement.lastElementChild.textContent.trim();
+    object["Description"] = list[i].parentElement.parentElement.nextSibling
+      .firstChild
+      ? list[i].parentElement.parentElement.nextSibling.firstChild.textContent
+      : "";
+    object["DisplayOrder"] = i + 1;
     fields.push(object);
   }
 
