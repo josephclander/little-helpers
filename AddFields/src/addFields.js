@@ -1,3 +1,4 @@
+const fs = require('fs');
 /**
  * Edit array of objects to have correct numerical display order
  * crucial to only add objects from one array
@@ -15,6 +16,7 @@ function addFields(input, fields) {
 
     return item;
   });
+  fs.writeFileSync('fieldsAdded.json', JSON.stringify(output));
   return JSON.stringify(output);
 }
 
